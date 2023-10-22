@@ -29,7 +29,8 @@ const Login = () => {
         })
         .then(function (response) {
             console.log(response)
-            document.cookie="loggedIn=true"     
+            document.cookie="loggedIn=true"
+            document.cookie=`id=${response.data.id}`     
             // window.location.replace("/home")  
         })
         .catch(function (error) {

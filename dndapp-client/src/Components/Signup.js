@@ -20,7 +20,7 @@ const Signin = () => {
     }
     console.log(userInfo)
 
-    const loginUser = (event) => {
+    const signUpUser = (event) => {
         event.preventDefault()
         console.log("Signup Function")
         axios.post("http://localhost:3000/auth/signup", {
@@ -46,7 +46,7 @@ const Signin = () => {
     return (
         <Container maxWidth="sm">
         <div>Sign In Component</div>
-            <form onSubmit={loginUser}>
+            <form onSubmit={signUpUser}>
                 <TextField label="email" name="email" value={userInfo.email} onChange={(event)=>{handleChange(event)}} variant="outlined" />
                 <TextField label="password" name="password" value={userInfo.password} type="password" onChange={(event)=>{handleChange(event)}} variant="outlined" />
                 <Button variant="outlined" type="submit">Sign Up</Button>
