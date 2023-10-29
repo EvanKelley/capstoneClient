@@ -30,7 +30,8 @@ const Login = () => {
         .then(function (response) {
             console.log(response)
             document.cookie="loggedIn=true"
-            document.cookie=`id=${response.data.id}`     
+            document.cookie=`id=${response.data.userId}`  
+            document.cookie=`token=${response.data.token}`   
             // window.location.replace("/home")  
         })
         .catch(function (error) {
@@ -43,17 +44,31 @@ const Login = () => {
         })
     }
    
+    // return (
+    //     <Container maxWidth="sm">
+    //     <div>Login Component</div>
+    //         <form onSubmit={loginUser}>
+    //             <TextField label="email" name="email" value={userInfo.email} onChange={(event)=>{handleChange(event)}} variant="outlined" />
+    //             <TextField label="password" name="password" value={userInfo.password} type="password" onChange={(event)=>{handleChange(event)}} variant="outlined" />
+    //             <Button variant="outlined" type="submit">Log In</Button>
+    //             <Button variant="outlined" type="submit">Sign Up</Button>
+    //         </form>
+    //     </Container>
+    // )
+
     return (
         <Container maxWidth="sm">
-        <div>Login Component</div>
-            <form onSubmit={loginUser}>
-                <TextField label="email" name="email" value={userInfo.email} onChange={(event)=>{handleChange(event)}} variant="outlined" />
-                <TextField label="password" name="password" value={userInfo.password} type="password" onChange={(event)=>{handleChange(event)}} variant="outlined" />
-                <Button variant="outlined" type="submit">Log In</Button>
-                <Button variant="outlined" type="submit">Sign Up</Button>
-            </form>
+          <div>Login Component</div>
+          <form onSubmit={loginUser}>
+            <TextField label="email" name="email" value={userInfo.email} onChange={(event) => { handleChange(event) }} variant="outlined" style={{ width: "70%" }} />
+            <TextField label="password" name="password" value={userInfo.password} type="password" onChange={(event) => { handleChange(event) }} variant="outlined" style={{ width: "70%" }} />
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <Button variant="outlined" type="submit" style={{ width: "70%" }}>Log In</Button>
+              <Button variant="outlined" type="submit" style={{ width: "70%" }}>Sign Up</Button>
+            </div>
+          </form>
         </Container>
-    )
+      )
 }
 
 export default Login
