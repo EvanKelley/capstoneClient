@@ -31,7 +31,7 @@ const Signin = () => {
             console.log(response)
             document.cookie="loggedIn=true"     
             document.cookie=`id=${response.data.id}`
-            // window.location.replace("/home")  
+            window.location.replace("/home")  
         })
         .catch(function (error) {
             console.log(error)
