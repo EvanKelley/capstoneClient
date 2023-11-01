@@ -23,7 +23,7 @@ const Signin = () => {
     const signUpUser = (event) => {
         event.preventDefault()
         console.log("Signup Function")
-        axios.post("http://localhost:3000/auth/signup", {
+        axios.post("https://capstone-client-nine.vercel.app/auth/signup", {
             email: userInfo.email,
             password: userInfo.password
         })
