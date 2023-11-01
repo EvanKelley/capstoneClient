@@ -32,7 +32,7 @@ const Login = () => {
             document.cookie="loggedIn=true"
             document.cookie=`id=${response.data.userId}`  
             document.cookie=`token=${response.data.token}`   
-            // window.location.replace("/home")  
+            window.location.replace("/home")  
         })
         .catch(function (error) {
             console.log(error)
@@ -44,17 +44,6 @@ const Login = () => {
         })
     }
    
-    // return (
-    //     <Container maxWidth="sm">
-    //     <div>Login Component</div>
-    //         <form onSubmit={loginUser}>
-    //             <TextField label="email" name="email" value={userInfo.email} onChange={(event)=>{handleChange(event)}} variant="outlined" />
-    //             <TextField label="password" name="password" value={userInfo.password} type="password" onChange={(event)=>{handleChange(event)}} variant="outlined" />
-    //             <Button variant="outlined" type="submit">Log In</Button>
-    //             <Button variant="outlined" type="submit">Sign Up</Button>
-    //         </form>
-    //     </Container>
-    // )
 
     return (
         <Container maxWidth="sm">
