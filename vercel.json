@@ -1,0 +1,10 @@
+{
+    "version": 2,
+    "name": "react",
+    "builds": [
+        { "src": "index.js", "use": "@now/node" }
+    ],
+    "routes": [
+        { "src": "/dndapp-client/(.*)", "dest": "/dndapp-client" }
+    ]
+}
