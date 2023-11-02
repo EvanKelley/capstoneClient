@@ -26,10 +26,6 @@ const Home = () => {
             console.log(error)
         })
 
-        // setUserInfo({
-        //     email: "",
-        //     password: ""
-        // })
     }
     useEffect(()=>{
         getUserCharacters()
